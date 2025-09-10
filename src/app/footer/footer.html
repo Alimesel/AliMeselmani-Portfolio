@@ -1,0 +1,101 @@
+<footer class="footer-section">
+  <div class="container">
+   
+
+    <!-- Main Footer Row -->
+    <div class="footer-content">
+      <!-- Logo + Bio -->
+      <div class="footer-widget about-widget">
+        <div class="footer-logo">
+          <h2 class="logo-text">AM</h2>
+          <span class="logo-subtitle">Web Developer</span>
+        </div>
+        <div class="footer-text">
+          <p>"Passionate web developer crafting digital experiences with clean code and innovative solutions. Turning ideas into reality, one line of code at a time."</p>
+        </div>
+        <div class="footer-social-icon">
+          <span>Connect with me</span>
+          <div class="social-links">
+            <a (click)="openLinkedIn()" class="linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a (click)="openGitHub()" class="github">
+              <i class="fab fa-github"></i>
+            </a>
+            <a (click)="sendEmail()" class="email">
+              <i class="far fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-widget">
+        <div class="footer-widget-heading">
+          <h3>Navigation</h3>
+        </div>
+        <ul>
+          <li><a (click)="scrollToSection('home')">Home</a></li>
+          <li><a (click)="scrollToSection('about')">About Me</a></li>
+          <li><a (click)="scrollToSection('skills')">Skills</a></li>
+          <li><a (click)="scrollToSection('projects')">Projects</a></li>
+          <li><a (click)="scrollToSection('contact')">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-widget">
+        <div class="footer-widget-heading">
+          <h3>Services</h3>
+        </div>
+        <ul>
+          <li><a >Web Development</a></li>
+          <li><a>Frontend Design</a></li>
+          <li><a >Backend Development</a></li>
+          <li><a >Responsive Design</a></li>
+          <li><a >Technical Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="footer-widget">
+        <div class="footer-widget-heading">
+          <h3>Quick Actions</h3>
+        </div>
+        <div class="quick-actions">
+          <a (click)="hireMe()" class="action-btn">
+            <i class="far fa-envelope"></i>
+            <span>Hire Me</span>
+          </a>
+          <a (click)="getQuote()" class="action-btn">
+            <i class="fas fa-comments"></i>
+            <span>Get Quote</span>
+          </a>
+          <a (click)="viewWork()" class="action-btn">
+            <i class="fas fa-eye"></i>
+            <span>View Work</span>
+          </a>
+          <a (click)="downloadCV()" class="action-btn">
+            <i class="fas fa-download"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="copyright-area">
+    <div class="container">
+      <div class="copyright-content">
+        <div class="copyright-text">
+          <p>© {{ currentYear }} Ali Meselmani. All Rights Reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a (click)="scrollToSection('privacy')">Privacy Policy</a>
+          <a (click)="scrollToSection('terms')">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

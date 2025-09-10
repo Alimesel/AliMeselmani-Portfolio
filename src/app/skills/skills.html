@@ -1,0 +1,50 @@
+<div class="skills-container">
+  <!-- VS Code-style Header -->
+  <div class="vs-header">
+    <div class="shapes">
+      <span class="shape curly-brace">&#123;&#125;</span>
+      <span class="shape angle-brace">&lt;/&gt;</span>
+      <span class="shape square-brace">&#91;&#93;</span>
+    </div>
+    <h2 class="title">Portfolio / Skills.ts – Crafting Code</h2>
+  </div>
+
+  <h2 class="section-title">class <span class="highlight">Skills</span> &#123;</h2>
+
+  <ng-container *ngFor="let category of skillCategories">
+    <div class="category fade-left">
+      <h3>public {{category.name}}():</h3>
+      <div class="skills-grid">
+        <div class="skill-card" 
+             *ngFor="let skill of category.list; trackBy: trackBySkill"
+             [attr.data-level]="skill.level">
+          <div class="skill-content">
+            <div class="skill-icon">
+              <img [src]="skill.icon" 
+                   [alt]="skill.name + ' icon'" 
+                   [style.filter]="skill.filter || 'none'"
+                   (error)="onIconError($event, skill)">
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <span class="skill-name">{{skill.name}}</span>
+                <span class="skill-level">{{skill.level}}%</span>
+              </div>
+              <div class="progress-container">
+                <div class="progress-bar">
+                  <div class="progress-fill" 
+                       [style.width.%]="0"
+                       [attr.data-target]="skill.level"
+                       [style.background]="getProgressGradient(skill.color)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <h2 class="section-title">&#125;</h2>
+</div>

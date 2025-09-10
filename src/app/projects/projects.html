@@ -1,0 +1,145 @@
+
+<div class="about-container">
+  <!-- VS Code-style Header -->
+  <div class="vs-header">
+    
+    <div class="shapes">
+      <span class="shape curly-brace">&#123;&#125;</span>
+      <span class="shape angle-brace">&lt;/&gt;</span>
+      <span class="shape square-brace">&#91;&#93;</span>
+    </div>
+    <h2 class="title">~/portfolio/projects.tsx – Professional Showcase</h2>
+  </div>
+
+  <!-- CLI Section -->
+  <div class="cli-section">
+    <div class="cli-line">
+      <span class="prompt">dev@portfolio:~$</span>
+      <span class="command">npm run build --production</span>
+    </div>
+    <div class="cli-line">
+      <span class="output">✓ Compiling TypeScript</span>
+      <span class="loading-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </span>
+    </div>
+    <div class="cli-line">
+      <span class="output">✓ Projects bundled successfully</span>
+    </div>
+    <div class="cli-line">
+      <span class="prompt">dev@portfolio:~$</span>
+      <span class="cursor"></span>
+    </div>
+  </div>
+
+  <!-- Intro Programming Text -->
+  <div class="projects-intro">
+    <h3 class="intro-title">
+      <i class="fas fa-code"></i>
+      Featured Development Projects
+    </h3>
+    <p class="intro-description">
+      A curated collection of full-stack applications showcasing modern development practices, 
+      clean architecture, and cutting-edge technologies. Each project demonstrates 
+      problem-solving skills and attention to detail.
+    </p>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects; trackBy: trackByProject">
+      <!-- Code Editor Header -->
+      <div class="card-editor-header">
+        <div class="editor-tab">
+          <i [class]="getProjectIcon(project.category)"></i>
+          <span>{{ project.name.toLowerCase().replace(' ', '-') }}.component.tsx</span>
+        </div>
+        <div class="editor-actions">
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="project-image-wrapper">
+        <img [src]="project.imageUrl" [alt]="project.name" class="project-image">
+        <div class="image-overlay">
+          <div class="overlay-content">
+            <a class="action-btn primary" [href]="project.link" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              <span>Live Demo</span>
+            </a>
+            <a class="action-btn secondary" [href]="project.githubLink" target="_blank">
+              <i class="fab fa-github"></i>
+              <span>Source</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Content -->
+      <div class="project-info">
+        <div class="project-header">
+          <h3 class="project-title">
+            <span class="title-icon" [style.color]="getCategoryColor(project.category)">
+              {{ getCategorySymbol(project.category) }}
+            </span>
+            {{ project.name }}
+          </h3>
+          <span class="project-status">
+            <i class="fas fa-circle status-dot"></i>
+            Production
+          </span>
+        </div>
+
+        <p class="project-desc">{{ project.description }}</p>
+
+        <!-- Technical Details -->
+        <div class="tech-details">
+          <div class="tech-section">
+            <span class="tech-label">Stack:</span>
+            <div class="tech-stack">
+              <span class="tech-badge" 
+                    *ngFor="let tech of project.tech"
+                    [ngClass]="techClass(tech)"
+                    [title]="tech">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <div class="project-stats">
+            <div class="stat-item">
+              <i class="fas fa-code-branch"></i>
+              <span>{{ project.commits || 'N/A' }}</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-star"></i>
+              <span>{{ project.stars || '0' }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Footer -->
+        <div class="project-footer">
+          <div class="category-tag">
+            <i [class]="getCategoryIcon(project.category)"></i>
+            <span>{{ project.category }}</span>
+          </div>
+          <div class="project-links">
+            <a [href]="project.link" target="_blank" class="link-btn" title="Live Demo">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a [href]="project.githubLink" target="_blank" class="link-btn" title="GitHub Repository">
+              <i class="fab fa-github"></i>
+            </a>
+            <button class="link-btn" title="More Details" (click)="showProjectDetails(project)">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

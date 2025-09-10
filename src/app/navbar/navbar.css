@@ -1,0 +1,117 @@
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100vh;
+  background: rgba(43, 48, 63, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 0;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Sidebar list */
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.sidebar li {
+  display: flex;
+  justify-content: center;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.sidebar a i {
+  -webkit-text-stroke: 1.5px #fff;
+  color: transparent;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.sidebar a:hover i {
+  color: #4da6ff;
+  -webkit-text-stroke: 0;
+  transform: scale(1.3);
+  text-shadow: 0 0 10px rgba(77, 166, 255, 0.7);
+}
+
+/* Active */
+.sidebar a.active i {
+  color: #4da6ff;
+  -webkit-text-stroke: 0;
+  transform: scale(1.2);
+  text-shadow: 0 0 12px rgba(77, 166, 255, 0.8);
+}
+
+/* --- Mobile Styles --- */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  background: rgba(43, 48, 63, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  z-index: 1100;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle i {
+  color: #fff;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.mobile-toggle:hover {
+  background: rgba(43, 48, 63, 1);
+}
+
+/* On small screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+}
+/* When sidebar is open → push arrow right */
+.sidebar.open ~ .mobile-toggle {
+  left: 85px; /* sidebar width (70px) + 15px gap */
+}

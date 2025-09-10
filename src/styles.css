@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global background for entire app */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #222731; /* professional dark-grey/blue */
+  color: #dcdcdc; /* default text color */
+  font-family: 'Fira Code', monospace;
+}
+
+/* Optional: make router-outlet stretch full height */
+app-root, router-outlet {
+  display: block;
+  min-height: auto;
+}

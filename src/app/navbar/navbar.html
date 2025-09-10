@@ -1,0 +1,35 @@
+<!-- Sidebar -->
+<nav class="sidebar" [class.open]="isOpen">
+  <ul>
+    <li>
+      <a (click)="scrollToSection('home')" [class.active]="isActive('home')">
+        <i class="fas fa-home"></i>
+      </a>
+    </li>
+    <li>
+      <a (click)="scrollToSection('about')" [class.active]="isActive('about')">
+        <i class="fas fa-user"></i>
+      </a>
+    </li>
+    <li>
+      <a (click)="scrollToSection('skills')" [class.active]="isActive('skills')">
+        <i class="fas fa-code"></i>
+      </a>
+    </li>
+    <li>
+      <a (click)="scrollToSection('projects')" [class.active]="isActive('projects')">
+        <i class="fas fa-project-diagram"></i>
+      </a>
+    </li>
+    <li>
+      <a (click)="scrollToSection('contact')" [class.active]="isActive('contact')">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Mobile Toggle Button (AFTER sidebar) -->
+<div class="mobile-toggle" (click)="toggleSidebar()">
+  <i [class]="isOpen ? 'fas fa-chevron-left' : 'fas fa-chevron-right'"></i>
+</div>

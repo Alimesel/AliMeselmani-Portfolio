@@ -1,0 +1,14 @@
+/* app.component.css */
+
+/* Default: mobile/tablet → full width */
+.content {
+  margin-left: 0;
+  padding: 0;
+}
+
+/* Laptops & desktops only */
+@media (min-width: 1025px) {
+  .content {
+    margin-left: 70px; /* same as navbar width */
+  }
+}
