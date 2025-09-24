@@ -489,9 +489,7 @@
 }
 
 @media (max-width: 480px) {
-  .shapes {
-    display: none;
-  }
+  
   
   .cli-section {
     padding: 12px 15px;

@@ -11,7 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class Home implements OnInit {
   strengths: string[] = [
     'Web Developer',
-    'Full Stack Engineer',
+    'Mobile Developer',
     'Project Management',
     'Problem Solving',
     'Team Collaboration'

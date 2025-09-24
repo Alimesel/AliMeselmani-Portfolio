@@ -521,4 +521,13 @@
   .shape {
     font-size: 1rem;
   }
+  
+
+  .dynamic-strength {
+    margin-left: 40px;
+    display: block;          /* force block display */
+    width: 100%;             /* take full width */
+    word-break: break-word;  /* break long text */
+    white-space: normal;     /* wrap normally */
+  }
 }
