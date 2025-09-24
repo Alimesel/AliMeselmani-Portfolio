@@ -6,7 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   standalone: true,
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
-  imports: [HttpClientModule]  // ✅ Add this!
+  imports: [HttpClientModule]
 })
 export class Home implements OnInit {
   strengths: string[] = [
@@ -59,16 +59,14 @@ export class Home implements OnInit {
     setTimeout(() => this.typeStrength(), speed);
   }
 
-  downloadCV() {
-    this.http.get('assets/CV.pdf', { responseType: 'blob' }).subscribe((blob) => {
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'CV.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    });
-  }
+downloadCV() {
+  const link = document.createElement('a');
+  link.href = '/assets/Alis_CV.pdf';  // Make sure this matches your actual filename
+  link.download = 'Ali_Meselmani_CV.pdf';
+  link.target = '_blank';
+  
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 }

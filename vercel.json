@@ -1,5 +1,25 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/dist/my-portfolio/index.html" }
+  "version": 2,
+  "name": "my-portfolio",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/my-portfolio",
+  "installCommand": "npm install",
+  "framework": null,
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
+      "dest": "/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }

@@ -5,8 +5,13 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build --configuration production",
+    "build:vercel": "ng build --configuration production --base-href=/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
   },
   "prettier": {
     "overrides": [
