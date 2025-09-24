@@ -277,6 +277,10 @@
   align-items: flex-start;
   margin-bottom: 8px;
 }
+.tech-badge.sqlite {
+  background-color: #003B57; /* SQLite blue */
+  color: white;
+}
 
 .project-title {
   font-size: 1.1rem;

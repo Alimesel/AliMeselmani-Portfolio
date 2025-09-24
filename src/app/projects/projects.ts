@@ -12,7 +12,7 @@ export interface Project {
   githubLink: string;
   commits?: string;
   stars?: string;
-  status: 'development' | 'production' | 'maintenance';
+  status: 'development' | 'production' | 'maintenance' | 'Comming Soon';
 }
 
 @Component({
@@ -37,9 +37,22 @@ export class Projects implements OnInit {
       stars: '8',
       status: 'production'
     },
+     {
+      id: 'Coffee-Shop',
+      name: 'Coffee Shop',
+      description: 'Coffee Shop Management App – A mobile app for managing customers, products, orders, and reports with an integrated POS system, streamlining daily coffee shop operations.',
+      category: 'Mobile App',
+      tech: ['Angular', 'Capacitor', 'SqlLite'],
+      imageUrl: 'assets/Coffee.png',
+      link: '',
+      githubLink: 'https://github.com/Alimesel',
+      commits: '342+',
+      stars: '45',
+      status: 'production'
+    },
     {
       id: 'portfolio-cms',
-      name: 'Portfolio CMS',
+      name: 'Comming Soon',
       description: 'Dynamic content management system for portfolio websites with real-time editing, responsive templates, and modern web technology integration.',
       category: 'Web App',
       tech: ['Angular', '.NET Core', 'Bootstrap'],
@@ -52,7 +65,7 @@ export class Projects implements OnInit {
     },
     {
       id: 'task-tracker',
-      name: 'Task Tracker',
+      name: 'Comming Soon',
       description: 'Comprehensive task management application with team collaboration features, real-time updates, advanced authentication, and REST API integration.',
       category: 'Productivity',
       tech: ['Angular', 'Node.js', 'MongoDB'],
@@ -63,45 +76,9 @@ export class Projects implements OnInit {
       stars: '15',
       status: 'production'
     },
-    {
-      id: 'api-gateway',
-      name: 'Microservices API',
-      description: 'Scalable API Gateway built with microservices architecture, implementing advanced authentication, rate limiting, and service discovery.',
-      category: 'Backend',
-      tech: ['.NET Core', 'Docker', 'Redis'],
-      imageUrl: 'assets/images/api-gateway.jpg',
-      link: '#',
-      githubLink: 'https://github.com/Alimesel',
-      commits: '203+',
-      stars: '22',
-      status: 'production'
-    },
-    {
-      id: 'mobile-banking',
-      name: 'Banking Mobile App',
-      description: 'Secure mobile banking application with biometric authentication, real-time transactions, and comprehensive financial management features.',
-      category: 'Mobile App',
-      tech: ['React Native', 'Node.js', 'PostgreSQL'],
-      imageUrl: 'assets/images/banking-app.jpg',
-      link: '#',
-      githubLink: 'https://github.com/Alimesel',
-      commits: '342+',
-      stars: '45',
-      status: 'production'
-    },
-    {
-      id: 'analytics-dashboard',
-      name: 'Analytics Dashboard',
-      description: 'Real-time analytics dashboard with interactive charts, data visualization, machine learning insights, and automated reporting capabilities.',
-      category: 'Data Visualization',
-      tech: ['React', 'D3.js', 'Python', 'FastAPI'],
-      imageUrl: 'assets/images/analytics-dashboard.jpg',
-      link: '#',
-      githubLink: 'https://github.com/Alimesel',
-      commits: '178+',
-      stars: '31',
-      status: 'development'
-    }
+    
+   
+
   ];
 
   ngOnInit(): void {
@@ -128,7 +105,9 @@ export class Projects implements OnInit {
       'PostgreSQL': 'postgresql',
       'Python': 'python',
       'FastAPI': 'fastapi',
-      'D3.js': 'd3js'
+      'D3.js': 'd3js',
+      'SqlLite': 'sqlite' 
+      
     };
     return mapping[tech] || 'default';
   }
