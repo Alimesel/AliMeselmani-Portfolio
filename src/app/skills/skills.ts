@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass, NgFor } from '@angular/common';
 
 interface Skill {
   name: string;
@@ -17,7 +17,7 @@ interface SkillCategory {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgFor, NgClass],
   templateUrl: './skills.html',
   styleUrls: ['./skills.css']
 })
